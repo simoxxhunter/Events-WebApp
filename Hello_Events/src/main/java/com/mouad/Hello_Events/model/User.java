@@ -1,5 +1,6 @@
 package com.mouad.Hello_Events.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.mouad.Hello_Events.model.enums.Role;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -27,5 +28,6 @@ public class User {
     private Role role;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<Booking> bookings;
 }
