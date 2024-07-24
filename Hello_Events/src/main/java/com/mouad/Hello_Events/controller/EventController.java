@@ -28,7 +28,6 @@ public class EventController {
     public Event updateEvent(@RequestBody Event event, @PathVariable Long id) {
         return eventService.editEvent(event, id);
     }
-
     @DeleteMapping
     public void deleteEvent(@PathVariable Long id) {
         eventService.deleteEvent(id);
