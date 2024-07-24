@@ -28,6 +28,7 @@ public class EventServiceImpl implements EventService {
 
         Event editedEvent = new Event();
         editedEvent.setEventId(id);
+        editedEvent.setTitle(event.getTitle());
         editedEvent.setDate(event.getDate());
         editedEvent.setCategory(event.getCategory());
         editedEvent.setBookings(event.getBookings());
