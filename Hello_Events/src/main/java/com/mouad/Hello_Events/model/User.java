@@ -74,4 +74,5 @@ public class User implements UserDetails {
     public Role getRole(Role role) {
         return role;
     }
+
 }
