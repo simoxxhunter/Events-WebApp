@@ -9,4 +9,5 @@ public interface EventService {
     List<Event> getAllEvents();
     Event editEvent(Event event, Long id);
     void deleteEvent(Long id);
+    Long countEvents();
 }
