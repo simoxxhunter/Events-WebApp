@@ -21,7 +21,7 @@ public class DashbordController {
 
     @GetMapping("/users")
     public Long countUsers(){
-        return userService.countAllUsers();
+        return userService.countUsers();
     }
 
     @GetMapping("/contacts")

@@ -24,8 +24,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Long countAllUsers() {
-        return userRepository.countAllUsers();
+    public Long countUsers() {
+        return userRepository.countUsers();
     }
 
 
