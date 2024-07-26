@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class TeamMembersServiceImp {
+public class TeamMembersServiceImp implements TeamMembersService{
 
     @Autowired
     private TeamMembersRepo TeamMembersRepository;
