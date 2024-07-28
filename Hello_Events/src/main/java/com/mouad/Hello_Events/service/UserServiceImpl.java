@@ -28,5 +28,17 @@ public class UserServiceImpl implements UserService {
         return userRepository.countUsers();
     }
 
+    @Override
+    public User editUser(User user, Long id) {
+        userRepository.findById(id);
 
+        User UserToEdit = new User();
+        UserToEdit.setUserId(id);
+        UserToEdit.setFirstName(UserToEdit.getFirstName());
+        UserToEdit.setLastName(UserToEdit.getLastName());
+        UserToEdit.setEmail(UserToEdit.getEmail());
+        UserToEdit.setPassword(UserToEdit.getPassword());
+
+        return userRepository.save(UserToEdit);
+    }
 }
