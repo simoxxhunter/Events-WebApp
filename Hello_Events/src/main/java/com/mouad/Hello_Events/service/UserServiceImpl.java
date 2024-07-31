@@ -30,14 +30,22 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User editUser(User user, Long id) {
-        userRepository.findById(id);
+        User UserToEdit = userRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("User not found with id " + id));
 
-        User UserToEdit = new User();
-        UserToEdit.setUserId(id);
-        UserToEdit.setFirstName(UserToEdit.getFirstName());
-        UserToEdit.setLastName(UserToEdit.getLastName());
-        UserToEdit.setEmail(UserToEdit.getEmail());
-        UserToEdit.setPassword(UserToEdit.getPassword());
+
+        if (user.getFirstName() != null) {
+            UserToEdit.setFirstName(user.getFirstName());
+        }
+        if (user.getLastName() != null) {
+            UserToEdit.setLastName(user.getLastName());
+        }
+        if (user.getEmail() != null) {
+            UserToEdit.setEmail(user.getEmail());
+        }
+        if (user.getPassword() != null) {
+            UserToEdit.setPassword(user.getPassword());
+        }
 
         return userRepository.save(UserToEdit);
     }
