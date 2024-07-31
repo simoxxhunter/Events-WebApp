@@ -23,7 +23,7 @@ public class SecurityConfiguration {
         http.csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/api/auth/**").permitAll()
-                        .requestMatchers("/api/event/**","/api/contact/**","/api/user/**").permitAll()
+                        .requestMatchers("/api/event/**","/api/contact/**","/api/user/**","/api/bookings/**").permitAll()
                         .anyRequest()
                         .authenticated()
                 )

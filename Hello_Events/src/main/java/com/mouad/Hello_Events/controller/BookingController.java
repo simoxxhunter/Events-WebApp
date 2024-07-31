@@ -1,7 +1,7 @@
 package com.mouad.Hello_Events.controller;
 
 import com.mouad.Hello_Events.model.Booking;
-import com.mouad.Hello_Events.service.BookingServiceImp;
+import com.mouad.Hello_Events.service.BookingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 public class BookingController {
 
     @Autowired
-    private BookingServiceImp bookingService;
+    private BookingService bookingService;
 
     @PostMapping("/book")
     public Booking bookTicket(@RequestParam Long userId, @RequestParam Long eventId, @RequestParam int ticketsNumber) {

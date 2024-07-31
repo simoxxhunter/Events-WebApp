@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 
 @Service
-public class BookingServiceImp {
+public class BookingServiceImp implements BookingService{
 
     @Autowired
     private BookingRepository bookingRepository;
@@ -23,6 +23,7 @@ public class BookingServiceImp {
     @Autowired
     private UserRepository userRepository;
 
+    @Override
     public Booking bookTicket(Long userId, Long eventId, int ticketsNumber) {
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new RuntimeException("User not found with id " + userId));
