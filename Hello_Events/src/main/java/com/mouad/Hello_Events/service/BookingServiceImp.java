@@ -26,12 +26,11 @@ public class BookingServiceImp implements BookingService{
     @Override
     public Booking bookTicket(Long userId, Long eventId, int ticketsNumber) {
         User user = userRepository.findById(userId)
-                .orElseThrow(() -> new RuntimeException("User not found with id " + userId));
+                .orElseThrow(() -> new RuntimeException("User not found"));
         Event event = eventRepository.findById(eventId)
-                .orElseThrow(() -> new RuntimeException("Event not found with id " + eventId));
-
+                .orElseThrow(() -> new RuntimeException("Event not found"));
         if (event.getAvailableTickets() < ticketsNumber) {
-            throw new RuntimeException("Not enough tickets available");
+            throw new RuntimeException("No tickets available");
         }
 
         Booking booking = new Booking();

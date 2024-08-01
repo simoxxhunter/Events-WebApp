@@ -22,10 +22,12 @@ public class SecurityConfiguration {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("/api/auth/**").permitAll()
-                        .requestMatchers("/api/event/**","/api/contact/**","/api/user/**","/api/bookings/**").permitAll()
-                        .anyRequest()
-                        .authenticated()
+//                        .requestMatchers("/api/auth/**").permitAll()
+//                        .requestMatchers("/api/event/**","/api/contact/**","/api/user/**","/api/bookings/**").permitAll()
+//                        .anyRequest()
+//                        .authenticated()
+                                .anyRequest().permitAll()
+
                 )
                 .sessionManagement(session -> session
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS)

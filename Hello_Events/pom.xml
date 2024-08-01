@@ -111,6 +111,10 @@
 				</configuration>
 			</plugin>
 		</plugins>
+
+		<finalName>dockerevents</finalName>
+
 	</build>
+
 
 </project>

@@ -46,7 +46,9 @@ public class UserServiceImpl implements UserService {
         if (user.getPassword() != null) {
             UserToEdit.setPassword(user.getPassword());
         }
+        var msg = "edited succesfully";
 
-        return userRepository.save(UserToEdit);
+        return  userRepository.save(UserToEdit);
+
     }
 }
